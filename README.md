@@ -14,7 +14,7 @@ Handyman is an open-source SaaS. Originally developed for a bootcamp project, th
 <h5>You can view the product <a href=''>here.</a></h5>
 
 <br> </br>
-<img src="https://i.ibb.co/y4Tq4Qh/hero.png">
+<img style="flex justify-center" src="https://i.ibb.co/y4Tq4Qh/hero.png">
 
 <br></br>
 <h3><b>Deploy it</b></h3>
