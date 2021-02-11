@@ -1,0 +1,81 @@
+<div class="grid h-full md:grid-cols-2">
+  <form class="flex flex-col" action="javascript:void(0);" method="POST">
+    {%csrf_token%}
+
+    <div class="flex items-center justify-center space-x-6">
+      <div id="bar-0" class="w-16 h-16 bg-green-500 rounded-full"></div>
+      <hr class="w-8 h-2 text-gray-500 ">
+      <div id="bar-1" class="w-16 h-16 bg-gray-300 rounded-full"></div>
+      <hr class="w-8 h-2 text-gray-500 ">
+      <div id="bar-2" class="w-16 h-16 bg-gray-300 rounded-full"></div>
+    </div>
+
+<div class="mt-12">
+    <div class="" id="form-section-0">{{ form }}</div>
+
+    <div class="hidden" id="form-section-1">
+      <h2 class="text-3xl text-gray-900 whitespace-nowrap">
+        Choose Your Profession
+      </h2>
+
+      <div class="grid-cols-1 px-24 text-xl">
+        {% for section in sections %}
+        <label> <input type="radio" /> {{ section }} G </label>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="hidden" id="form-section-2">
+      <h2 class="text-3xl text-gray-900 whitespace-nowrap">Pay With Stripe</h2>
+    </div>
+
+    <div class="hidden" id="form-section-3">
+      <h2 class="text-3xl text-gray-900 whitespace-nowrap">Success</h2>
+    </div>
+</div>
+
+    <button
+      id="btn"
+      class="px-6 py-3 mt-12 font-bold tracking-widest text-gray-900 uppercase bg-green-500 rounded-lg shadow-md"
+    >
+      next
+    </button>
+  </form>
+
+  <div class="w-full px-8 py-12 text-center text-white bg-indigo-600">
+    <div>kkl</div>
+    contents
+  </div>
+</div>
+
+<script>
+  const { fromEvent } = rxjs;
+  const { pipe, subscribe, scan } = rxjs.operators;
+  let state = 0;
+
+  const button = document.getElementById("btn");
+
+  fromEvent(button, "click")
+    .pipe(scan((count) => state++, 0))
+    .subscribe((count) => {
+      let prevFormSection =
+        state && document.getElementById(`form-section-${state - 1}`);
+      let formSection =
+        state !== 3 && document.getElementById(`form-section-${state}`);
+      if (formSection && prevFormSection) {
+        prevFormSection.style.display = "none";
+        formSection.style.display = "block";
+      }
+
+
+      let bar = state !== 3 && document.getElementById(`bar-${state}`)
+      let prevBar = state && document.getElementById(`bar-${state-1}`)
+
+      if (bar && prevBar) {
+        prevBar.style.backgroundColor = "#e2e8f0"
+        bar.style.backgroundColor = "#48bb78"
+      }
+
+
+    });
+</script>
