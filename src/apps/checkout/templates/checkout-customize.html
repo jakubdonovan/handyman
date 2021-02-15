@@ -1,0 +1,21 @@
+{% extends "form.html" %}
+
+{% block form_section %}
+    {{block.super}}
+
+    <br>
+    <div>
+        <h2>What professions would you like to promote?</h2>
+        <label class="block">
+            <span class="text-gray-700">Multiselect</span>
+            <select class="block w-full mt-1 form-multiselect" multiple>
+                {% for section in sections %}
+
+                    <option>{{section}}</option>
+                {% endfor %}
+            </select>
+        </label>
+
+    </div>
+
+{% endblock %}

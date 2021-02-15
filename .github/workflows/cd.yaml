@@ -29,13 +29,16 @@ jobs:
           poetry install
 
       - name: Format with black
-        run: poetry run black
+        run: poetry run black .
 
       - name: Format with isort
         run: poetry run isort .
 
       - name: Lint with flake8
         run: poetry run flake8
+
+      - name: Lint with flake8
+        run: poetry run mypy .
 
       - name: Test with pytest
         run: poetry run pytest

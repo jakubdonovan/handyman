@@ -1,0 +1,15 @@
+<div class="flex items-center justify-center space-x-4">
+    {% for stage in stages %}
+
+        {% if forloop.counter == 1 %}
+            <stage-section stage={{stage.name}} active={{wizard.steps.step0}}></stage-section>
+        {% else %}
+            <stage-section stage={{stage.name}}></stage-section>
+        {% endif %}
+
+        {% if stages|length != forloop.counter %}
+            <hr class="w-16 h-2 mb-6 text-gray-500" /> 
+        {% endif %}
+
+    {% endfor %}
+</div>

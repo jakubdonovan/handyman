@@ -2,7 +2,8 @@ import requests
 from requests.models import Response
 
 
-def fetch_sections():
+def fetch_sections() -> list[str]:
+
     json = {"query": "{ sectionMany {_id, title}  }"}
     resp: Response = requests.post(
         "https://handymanjacek.com/graphql", json=json

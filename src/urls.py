@@ -13,8 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from src.apps.checkout.views import CheckoutWizard, FORMS
 from django.contrib import admin
 from django.urls import path
-from src.apps.form import views
+# from src.apps.checkout import views
 
-urlpatterns = [path("admin/", admin.site.urls), path("form", views.index)]
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path('checkout/', CheckoutWizard.as_view(FORMS)),
+]

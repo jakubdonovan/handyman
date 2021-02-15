@@ -11,12 +11,14 @@ INSTALLED_APPS: list[str] = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "src.apps.main",
     "src.apps.theme",
-    "src.apps.form",
+    "src.apps.main",
+    "src.apps.checkout",
+    "formtools"
 ]
 
 MIDDLEWARE: list[str] = [
+    
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -42,6 +44,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
             ],
+            "builtins": [],
         },
     },
 ]
@@ -103,3 +106,6 @@ USE_TZ = True
 STATIC_ROOT = BASE_DIR.joinpath("staticfiles")
 
 STATIC_URL = "/static/"
+
+PHONENUMBER_DB_FORMAT = "NATIONAL"
+PHONENUMBER_DEFAULT_REGION = "GB"

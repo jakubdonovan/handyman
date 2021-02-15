@@ -1,24 +1,54 @@
-from django.http.response import HttpResponseRedirect
 from .logic.request import fetch_sections
-from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
 
-from .logic.form import CheckoutForm
+from src.apps.checkout.logic.form import ContactForm, PageOptionsForm
+from django.shortcuts import render
+from formtools.wizard.views import CookieWizardView
+
+from .logic.form import PageOptionsForm, ContactForm
+from .models import Stage
+
+FORMS = [("contact_form", ContactForm), ("customize_form", PageOptionsForm)]
+
+TEMPLATES = {
+    "contact_form": "checkout-contact.html",
+    "customize_form": "checkout-customize.html"
+}
+
+class CheckoutWizard(CookieWizardView):
+
+    def get_template_names(self):
+        return [TEMPLATES[self.steps.current]]
 
 
-def index(request: HttpRequest) -> HttpResponse:
-    """
-    Main (or index) view.
-    Returns rendered default page to the user.
-    Typed with the help of ``django-stubs`` project.
-    """
+    def get_context_data(self, form, **kwargs):
+        context = super().get_context_data(form=form, **kwargs)
 
-    # Process Form Data
-    if request.method == "POST":
-        form = CheckoutForm(request.POST)
+        form_options = [
+            {
 
-        if form.is_valid():
-            return HttpResponseRedirect("/success/")
+                "header": "Enter your contact details",
+                "sub_header": "The contact information will be visible to your customers."
 
-    context = {"form": CheckoutForm, "sections": fetch_sections()}
-    return render(request, "index.html", context)
+            },
+            {
+                "header": "Customize Your Page",
+                "sub_header": "Personalize your page to continue."
+            }
+        ]
+
+        rest = {"stages": Stage.objects.all(), "sections": fetch_sections, 'form_options': form_options[self.steps.step0]}
+
+        return context | rest
+
+    def done(self, form_list, **kwargs):
+        print("done")
+        result = {
+            "form_data": [form.cleaned_data for form in form_list],
+        },
+
+        print(result)
+        return render(
+            self.request,
+            "done.html",
+        )
