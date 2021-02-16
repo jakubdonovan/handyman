@@ -1,16 +1,17 @@
+from typing import Text
 from django import forms
 from django.forms import ModelForm
 from django.forms.widgets import TextInput
-from src.apps.checkout.models import ContactOptions, PageOptions
+from src.apps.checkout.models import PageOptions
 from phonenumber_field.formfields import PhoneNumberField
 
 
 # Create the form class.
 class ContactForm(forms.Form):
     first_name = forms.CharField(label="First Name", widget=TextInput())
-    last_name = forms.CharField(label="First Name", widget=TextInput())
+    last_name = forms.CharField(label="Last Name", widget=TextInput())
 
-    phone_number = PhoneNumberField(region="GB")
+    phone_number = PhoneNumberField(region="GB", widget=(TextInput(attrs={"class": "border-gray-200 col-span-2 w-full"})))
     whats_app = forms.CheckboxInput()
 
     def __init__(self, *args, **kwargs):

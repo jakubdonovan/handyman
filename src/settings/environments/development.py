@@ -7,7 +7,8 @@ ALLOWED_HOSTS = [
     "0.0.0.0",
     "127.0.0.1",
     "[::1]",
-]
+    ".ngrok.io"
+    ]
 
 INSTALLED_APPS += ["livereload"]
 

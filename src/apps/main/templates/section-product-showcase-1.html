@@ -1,0 +1,32 @@
+{% extends "main.html" %} {% block product_showcase1 %}
+<section class="flex justify-center px-8 py-12 mt-12 bg-gray-50">
+  <div class="max-w-5xl">
+    <h2 class="text-3xl font-bold text-gray-900 font-proxima">
+      A PROVEN TRACK RECORD
+    </h2>
+    <h3 class="text-xl text-gray-500 font-inter">
+      Content & Copywriting writen by experts.
+    </h3>
+
+    <div class="flex items-center mt-12 space-x-6 text-lg">
+      <div class="flex flex-col justify-around font-inter">
+        <p class="">
+          Using our built-in analytics we’ve perfected the site to get the best
+          conversion rate.
+        </p>
+        <p class="">
+          Out of the box authority. It also comes with our hundreds of
+          trustpilot reviews.
+        </p>
+      </div>
+
+      <img
+        class="ml-auto shadow-xl h-96"
+        src="{% static 'imgs/product-showcase-1.png' %}"
+        alt="Our professionally crafted profession sections"
+      />
+    </div>
+  </div>
+</section>
+
+{% endblock %}

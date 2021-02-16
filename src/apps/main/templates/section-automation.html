@@ -1,0 +1,67 @@
+{% extends "main.html" %} {% block automation %}
+
+<section class="flex justify-center px-8 py-12 mt-12">
+  <div class="max-w-5xl">
+    <h2 class="text-3xl font-bold text-gray-900 font-proxima">
+      MANAGEMENT AUTOMATION
+    </h2>
+    <h3 class="text-xl text-gray-500 font-inter">
+      Automatic job posting on 20+ sites including
+    </h3>
+
+    <div class="grid w-full grid-cols-3 mt-12">
+      <div class="grid border-2 border-gray-200">
+        <div class="flex items-center justify-center">
+          <img
+            class="h-12 m-8"
+            src="{% static 'imgs/gumtree.png' %}"
+            alt="Our professionally crafted profession sections"
+          />
+        </div>
+
+        <div class="flex items-center justify-center border-t-2">
+          <img
+            class="h-12 m-8"
+            src="{% static 'imgs/facebook.png' %}"
+            alt="Our professionally crafted profession sections"
+          />
+        </div>
+      </div>
+
+      <div class="grid border-t-2 border-b-2 border-r-2 border-gray-200">
+        <div class="flex items-center justify-center">
+          <img
+            class="h-12 m-8"
+            src="{% static 'imgs/craigslist.png' %}"
+            alt="Our professionally crafted profession sections"
+          />
+        </div>
+        <div class="flex items-center justify-center border-t-2">
+          <img
+            class="h-12 m-8"
+            src="{% static 'imgs/task-rabbit.png' %}"
+            alt="Our professionally crafted profession sections"
+          />
+        </div>
+      </div>
+      <div class="grid border-t-2 border-b-2 border-r-2 border-gray-200">
+        <div class="flex items-center justify-center">
+          <img
+            class="h-12 m-8"
+            src="{% static 'imgs/google.png' %}"
+            alt="Our professionally crafted profession sections"
+          />
+        </div>
+
+        <div class="flex items-center justify-center border-t-2">
+          <img
+            class="h-12 m-8"
+            src="{% static 'imgs/yell.png' %}"
+            alt="Our professionally crafted profession sections"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

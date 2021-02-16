@@ -1,0 +1,45 @@
+{% extends "base.html" %} 
+{% load static %}
+
+{% block content %}
+<div>
+
+<section class="relative px-12 py-12">
+  <div class="flex flex-col items-center justify-center -mx-12 md:mx-0">
+    <h1
+      class="w-full max-w-5xl mb-12 text-3xl font-black text-center text-gray-900 md:text-left lg:mb-12 md:text-7xl font-proxima"
+    >
+      Get this site
+    </h1>
+    <img
+      class="w-full max-w-5xl shadow-xl h-96 md:h-auto md:mx-0"
+      src="{% static 'imgs/hero.png' %}"
+      alt="hero"
+    >
+    <img
+      class="absolute hidden h-32 mt-6 md:block top-24 lg:top-0 lg:mb-64 lg:h-64 "
+      src="{% static 'imgs/hero-arrow.png' %}"
+      alt="hero"
+    >
+    <button
+      class="flex items-center px-12 py-4 mt-8 space-x-2 font-bold tracking-wider text-white uppercase bg-indigo-500 rounded-lg font-roboto"
+    >
+      <img
+        class="w-8 h-8 shadow-xl"
+        src="{% static 'imgs/credit-card.svg' %}"
+        alt="hero"
+      >
+      <a> 14 day free trial </a>
+    </button>
+  </div>
+  
+</section>
+    <!-- About -->
+    {% block about %}
+    <div>sds</div>
+    {% endblock %}
+
+    <div>sdasds</div>
+
+</div>
+{% endblock %}

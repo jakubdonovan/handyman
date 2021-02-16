@@ -16,18 +16,18 @@
         {{ wizard.management_form }}
 
           <form-section active header="{{form_options.header}}" sub-header="{{form_options.sub_header}}">
-        {% block form_section %}
-              {% for field in form %}
+            {% block form_section %}
+                  {% for field in form %}
 
-                <div class='grid gap-2'>{{ field.errors }} {{ field.label_tag }} {{ field }}</div>
+                    <div class="grid grid-cols-2">
+                      {{ field.errors }} {{ field.label_tag }} {{ field }}
+                    </div>
 
-              {% endfor %}
-        {% endblock %}
+                  {% endfor %}
+            {% endblock %}
           </form-section>
+        </div>
 
-
-
-      </div>
 
       <div class="flex justify-center w-full">
         {% if wizard.steps.current == wizard.steps.last %}

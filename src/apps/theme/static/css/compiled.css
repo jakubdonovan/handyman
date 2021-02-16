@@ -11427,6 +11427,14 @@ select {
   font-family: Roboto;
 }
 
+.font-logo {
+  font-family: Leckerli One;
+}
+
+.font-proxima {
+  font-family: proxima-nova;
+}
+
 .font-thin {
   font-weight: 100;
 }
@@ -42057,6 +42065,14 @@ select {
     font-family: Roboto;
   }
 
+  .sm\:font-logo {
+    font-family: Leckerli One;
+  }
+
+  .sm\:font-proxima {
+    font-family: proxima-nova;
+  }
+
   .sm\:font-thin {
     font-weight: 100;
   }
@@ -72607,6 +72623,14 @@ select {
 
   .md\:font-roboto {
     font-family: Roboto;
+  }
+
+  .md\:font-logo {
+    font-family: Leckerli One;
+  }
+
+  .md\:font-proxima {
+    font-family: proxima-nova;
   }
 
   .md\:font-thin {
@@ -103161,6 +103185,14 @@ select {
     font-family: Roboto;
   }
 
+  .lg\:font-logo {
+    font-family: Leckerli One;
+  }
+
+  .lg\:font-proxima {
+    font-family: proxima-nova;
+  }
+
   .lg\:font-thin {
     font-weight: 100;
   }
@@ -133713,6 +133745,14 @@ select {
     font-family: Roboto;
   }
 
+  .xl\:font-logo {
+    font-family: Leckerli One;
+  }
+
+  .xl\:font-proxima {
+    font-family: proxima-nova;
+  }
+
   .xl\:font-thin {
     font-weight: 100;
   }
@@ -164263,6 +164303,14 @@ select {
 
   .\32xl\:font-roboto {
     font-family: Roboto;
+  }
+
+  .\32xl\:font-logo {
+    font-family: Leckerli One;
+  }
+
+  .\32xl\:font-proxima {
+    font-family: proxima-nova;
   }
 
   .\32xl\:font-thin {

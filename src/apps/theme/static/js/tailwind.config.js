@@ -10,6 +10,8 @@ module.exports = {
       fontFamily: {
         inter: "Inter",
         roboto: "Roboto",
+        logo: "Leckerli One",
+        proxima: "proxima-nova",
       },
     },
   },
