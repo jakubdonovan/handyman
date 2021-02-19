@@ -6,4 +6,4 @@ from django.shortcuts import render
 
 def index(request:HttpRequest) -> HttpResponse:
     context = {}
-    return render(request, 'main.html', context=context)
+    return render(request, 'base.html', context=context)

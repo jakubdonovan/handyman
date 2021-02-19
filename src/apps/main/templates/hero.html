@@ -1,0 +1,35 @@
+{% load static %}
+<section 
+class="relative px-12 py-12">
+  <div class="flex flex-col items-center justify-center -mx-12 md:mx-0">
+    <h1
+      class="w-full max-w-5xl mb-12 text-3xl font-black text-center text-blueGray-900 md:text-left lg:mb-12 md:text-7xl font-proxima"
+    >
+      Get this site
+    </h1>
+    <img
+      class="w-full h-64 max-w-5xl rounded-lg shadow-xl md:h-auto md:mx-0"
+      src="{% static 'imgs/hero.png' %}"
+      alt="hero"
+    >
+    <img
+      class="absolute hidden h-32 mt-6 md:block top-24 lg:top-0 lg:mb-64 lg:h-64 "
+      src="{% static 'imgs/hero-arrow.png' %}"
+      alt="hero"
+    >
+    <button
+      class="flex items-center px-12 py-4 mt-8 space-x-4 font-black tracking-wider text-white uppercase rounded-lg hover:from-indigo-700 from-indigo-500 to-indigo-700 bg-gradient-to-t font-proxima"
+    >
+    <div class="w-8 text-indigo-200">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+      </svg>
+    </div>
+ 
+      <a href='/checkout'> 14 day free trial </a>
+    </button>
+  </div>
+
+  
+
+</section>
