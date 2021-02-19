@@ -41,17 +41,33 @@ const stageSection = {
 
   template: `
 <div class="flex flex-col items-center justify-center space-y-3 capitalize">
-    <div v-bind:class="{'bg-green-400': active}" class="w-12 h-12 bg-gray-200 rounded-full"></div>
+    <div v-bind:class="{'bg-green-400': active}" class="w-8 h-8 md:w-12 md:h-12 bg-gray-200 rounded-full"></div>
     <p> [[stage]] </p>
 </div>
 `,
 };
 
+const productBenefit = {
+  delimiters: ["[[", "]]"],
+  props: {
+    benefit: String,
+  },
+  template: `
+    <div class="flex items-center justify-start space-x-6">
+      <div class="w-6 h-6 text-green-400">
+            <svg class="h-full" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" ></path>
+            </svg>
+      </div>
+
+      <p class="text-lg font-thin">[[benefit]]</p>
+
+    </div>
+`,
+};
+
 const app = new Vue({
   el: "#app",
-  data: {
-    msg: "test",
-    state: 0,
-  },
-  components: { stageSection, formSection },
+  data: {},
+  components: { stageSection, formSection, productBenefit },
 });

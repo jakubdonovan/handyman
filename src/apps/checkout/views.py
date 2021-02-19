@@ -8,6 +8,8 @@ from formtools.wizard.views import CookieWizardView
 from .logic.form import PageOptionsForm, ContactForm
 from .models import Stage
 
+import inspect
+
 FORMS = [("contact_form", ContactForm), ("customize_form", PageOptionsForm)]
 
 TEMPLATES = {
@@ -17,6 +19,13 @@ TEMPLATES = {
 
 class CheckoutWizard(CookieWizardView):
 
+    # def post(self, request, **kwargs):
+        
+    #     print(request.body)
+
+    #     print(inspect.getmembers(request))
+    #     return super().post( request )
+        
     def get_template_names(self):
         return [TEMPLATES[self.steps.current]]
 
@@ -50,5 +59,6 @@ class CheckoutWizard(CookieWizardView):
         print(result)
         return render(
             self.request,
-            "done.html",
+            "success.html",
+            result
         )

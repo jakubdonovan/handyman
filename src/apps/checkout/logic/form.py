@@ -8,10 +8,10 @@ from phonenumber_field.formfields import PhoneNumberField
 
 # Create the form class.
 class ContactForm(forms.Form):
-    first_name = forms.CharField(label="First Name", widget=TextInput())
-    last_name = forms.CharField(label="Last Name", widget=TextInput())
+    first_name = forms.CharField(label="First Name", widget=TextInput(attrs={'placeholder': "John"}), )
+    last_name = forms.CharField(label="Last Name", widget=TextInput(attrs={'placeholder': "Doe"}))
 
-    phone_number = PhoneNumberField(region="GB", widget=(TextInput(attrs={"class": "border-gray-200 col-span-2 w-full"})))
+    phone_number = PhoneNumberField(region="GB", widget=(TextInput(attrs={"class": "border-gray-200 w-full", "placeholder": "07391205592"})))
     whats_app = forms.CheckboxInput()
 
     def __init__(self, *args, **kwargs):
@@ -19,9 +19,9 @@ class ContactForm(forms.Form):
         for visible in self.visible_fields():
 
             if not (field_class := visible.field.widget.attrs).get("class"):
-                field_class["class"] = "px-4 py-2 flex rounded-md border-gray-200 gap-4"
+                field_class["class"] = "px-4 py-2 flex rounded-md border-gray-200"
             else:
-                field_class["class"] += " px-4 py-2 flex rounded-md gap-4"
+                field_class["class"] += " px-4 py-2 flex rounded-md"
 
 
     # class Meta:
@@ -48,11 +48,11 @@ class PageOptionsForm(ModelForm):
     class Meta:
         model = PageOptions
         fields = [
-            "professions",
+            # "professions",
             "profile_image",
-            "review_name",
-            "review_quote",
-            "review_image",
-            "portfolio_image",
-            "portfolio_description",
+            # "review_name",
+            # "review_quote",
+            # "review_image",
+            # "portfolio_image",
+            # "portfolio_description",
         ]

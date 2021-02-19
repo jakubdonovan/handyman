@@ -10,20 +10,20 @@ class PageOptions(models.Model):
     professions = ArrayField(models.CharField(max_length=MAX_LENGTH), default=list)
     profile_image = models.CharField(max_length=MAX_LENGTH)
 
-    review_name = models.CharField(max_length=MAX_LENGTH)
-    review_image = models.CharField(max_length=MAX_LENGTH)
-    review_quote = models.CharField(max_length=MAX_LENGTH)
+    # review_name = models.CharField(max_length=MAX_LENGTH)
+    # review_image = models.CharField(max_length=MAX_LENGTH)
+    # review_quote = models.CharField(max_length=MAX_LENGTH)
 
-    portfolio_image = models.CharField(max_length=MAX_LENGTH)
-    portfolio_description = models.CharField(max_length=900)
+    # portfolio_image = models.CharField(max_length=MAX_LENGTH)
+    # portfolio_description = models.CharField(max_length=900)
 
 
 class ContactOptions(models.Model):
     first_name = models.CharField(max_length=MAX_LENGTH)
     last_name = models.CharField(max_length=MAX_LENGTH)
-    phone_number = PhoneNumberField(default="")
+    phone_number = PhoneNumberField()
     whatsapp = BooleanField()
-    messenger = models.CharField(max_length=MAX_LENGTH, null=True)
+    messenger = models.CharField(max_length=MAX_LENGTH, null=True, blank=True)
 
     class Meta:
         verbose_name = "Contact Option"
