@@ -2,6 +2,7 @@ name: sol
 on: [push]
 env:
   production: True
+  PROJECT_PATH: src/apps/theme/static/js
 jobs:
   build:
     runs-on: ubuntu-20.04
@@ -46,16 +47,16 @@ jobs:
       # - name: Upload coverage to Codecov
       #   uses: codecov/codecov-action@v1
 
-      - name: Set up Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
+      # - name: Set up Node.js ${{ matrix.node-version }}
+      #   uses: actions/setup-node@v1
+      #   with:
+      #     node-version: ${{ matrix.node-version }}
 
-      - name: Setup & Build Tailwind
-        working-directory: src/apps/theme/static/js
-        run: |
-          npm i
-          npm run dev
+      # - name: Setup & Build Tailwind
+      #   working-directory: ${{ env.PRODUCT_PATH }}
+      #   run: |
+      #     npm i
+      #     npm run dev
 
       - name: Deploy to dokku
         uses: idoberko2/dokku-deploy-github-action@v1
