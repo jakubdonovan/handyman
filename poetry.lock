@@ -916,6 +916,14 @@ optional = false
 python-versions = "*"
 
 [[package]]
+name = "split-settings"
+version = "1.0.0"
+description = "Organize Django settings into multiple files and directories. Easily override and modify settings. Use wildcards and optional settings files."
+category = "main"
+optional = false
+python-versions = ">=3.6,<4.0"
+
+[[package]]
 name = "sqlparse"
 version = "0.4.1"
 description = "A non-validating SQL parser."
@@ -1043,7 +1051,7 @@ brotli = ["brotli"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "123d3f3fdf49131e0de74816c784db942fd2fbebb9ba473cc9756b60bd50a140"
+content-hash = "67d0ae327640bf31bfe985a8c90d349aa5bc7ddd1e7d7933ab12a4f93f9d8a13"
 
 [metadata.files]
 appdirs = [
@@ -1522,6 +1530,10 @@ snowballstemmer = [
 sortedcontainers = [
     {file = "sortedcontainers-2.3.0-py2.py3-none-any.whl", hash = "sha256:37257a32add0a3ee490bb170b599e93095eed89a55da91fa9f48753ea12fd73f"},
     {file = "sortedcontainers-2.3.0.tar.gz", hash = "sha256:59cc937650cf60d677c16775597c89a960658a09cf7c1a668f86e1e4464b10a1"},
+]
+split-settings = [
+    {file = "split_settings-1.0.0-py3-none-any.whl", hash = "sha256:78904bbbaaaa400d9a5ebc4ac316cbd322f8042ee70ecbcfb60b5ddd8adcd2d2"},
+    {file = "split_settings-1.0.0.tar.gz", hash = "sha256:01bf629db64b4fab5d7e78fe3064fee08761f97d382fd38bea87c9772c5ab247"},
 ]
 sqlparse = [
     {file = "sqlparse-0.4.1-py3-none-any.whl", hash = "sha256:017cde379adbd6a1f15a61873f43e8274179378e95ef3fede90b5aa64d304ed0"},
