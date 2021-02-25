@@ -5,8 +5,8 @@
     "start": "yarn dev",
     "build": "yarn build:clean && yarn build:postcss",
     "build:clean": "rimraf ../css",
-    "build:postcss": "yarn dev",
-    "dev": "yarn dev:postcss",
+    "build:postcss": "cross-env NODE_ENV=production && postcss src/styles.css -o ../css/compiled.css && yarn build:test",
+    "build:test": "cd .",
     "dev:postcss": "postcss src/styles.css -o ../css/compiled.css"
   },
   "keywords": [],
