@@ -7,7 +7,7 @@
     "build:clean": "rimraf ../css",
     "build:postcss": "cross-env NODE_ENV=production && yarn dev",
     "dev": "npm run dev:postcss",
-    "dev:postcss": "postcss src/styles.css -o ../css/compiled.css"
+    "dev:postcss": "sudo postcss src/styles.css -o ../css/compiled.css"
   },
   "keywords": [],
   "author": "",
