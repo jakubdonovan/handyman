@@ -2,21 +2,19 @@
   "name": "@handyman/tailwind-theme",
   "description": "",
   "scripts": {
-    "start": "npm run dev",
-    "build": "npm run build:clean && npm run build:postcss",
+    "start": "yarn dev",
+    "build": "yarn build:clean && yarn build:postcss",
     "build:clean": "rimraf ../css",
     "build:postcss": "cross-env NODE_ENV=production && yarn dev",
-    "dev": "npm run dev:postcss",
-    "dev:postcss": "postcss src/styles.css -o src/compiled.css"
+    "dev": "yarn dev:postcss",
+    "dev:postcss": "postcss src/styles.css -o ../css/compiled.css"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@tailwindcss/custom-forms": "^0.2.1",
     "@tailwindcss/forms": "^0.2.1",
     "autoprefixer": "^10.2.4",
-    "clean-css-cli": "^4.3.0",
     "cross-env": "^7.0.3",
     "postcss": "^8.1.9",
     "postcss-cli": "^8.3.0",
