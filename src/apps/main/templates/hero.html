@@ -1,35 +1,55 @@
-{% load static %}
+
 <section 
-class="relative px-12 py-12">
-  <div class="flex flex-col items-center justify-center -mx-12 md:mx-0">
+class="relative grid h-screen grid-cols-6 py-8 bg-indigo-600" >
+  <div class="flex flex-col justify-center col-span-8 col-start-1 px-12 py-12 md:col-span-3 lg:col-span-2 md:mx-0">
+    <nav class="absolute top-0 left-0 p-4">
+      <h2 style="font-family: Leckerli One;"class="py-4 text-2xl text-white font-logo"><a href="/">Handyman</a></h2>
+    </nav>
+
     <h1
-      class="w-full max-w-5xl mb-12 text-3xl font-black text-center text-blueGray-900 md:text-left lg:mb-12 md:text-7xl font-proxima"
+    style="line-height: 120%;"
+      class="w-full mt-8 text-2xl font-bold text-white md:text-5xl font-proxim0a"
     >
-      Get this site
+      Create a perfect website in just 30 seconds
     </h1>
-    <img
-      class="w-full h-64 max-w-5xl rounded-lg shadow-xl md:h-auto md:mx-0"
-      src="{% static 'imgs/hero.png' %}"
-      alt="hero"
-    >
-    <img
-      class="absolute hidden h-32 mt-6 md:block top-24 lg:top-0 lg:mb-64 lg:h-64 "
-      src="{% static 'imgs/hero-arrow.png' %}"
-      alt="hero"
-    >
-    <button
-      class="flex items-center px-12 py-4 mt-8 space-x-4 font-black tracking-wider text-white uppercase rounded-lg hover:from-indigo-700 from-indigo-500 to-indigo-700 bg-gradient-to-t font-proxima"
-    >
-    <div class="w-8 text-indigo-200">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-      </svg>
+
+    <h3 class="mt-4 text-white md:text-2xl font-proxima">
+      A service built for handymen by handymen.
+    </h3>
+
+
+    <div class="flex flex-col items-center mt-24 space-y-8 lg:flex-row lg:space-y-0 lg:space-x-8">
+      <button
+        class="flex items-center px-12 py-4 space-x-4 text-lg font-bold tracking-wider text-white uppercase rounded-lg whitespace-nowrap hover:from-purple-500 from-purple-700 to-purple-500 bg-gradient-to-t font-proxima"
+      >
+        <a href='/checkout'> Get started </a>
+
+        <div class="w-8 text-purple-200">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </div>
+  
+      </button>
+
+      <a href="https://handymanjacek.com" class="text-lg text-center text-white underline font-inter">view the page</a>
+
     </div>
- 
-      <a href='/checkout'> 14 day free trial </a>
-    </button>
+
   </div>
 
-  
+    
+<!-- 
+  <div
+    class="absolute top-0 right-0 w-full col-span-4 bg-cover rounded-lg shadow-2xl h-96 md:h-auto md:mx-0"
+    style="background-image: url('../static/imgs/bg-vector.svg');"
+    alt="bg vector"
+  ></div> -->
 
-</section>
+  <div
+    class="hidden w-full h-full col-span-3 bg-cover rounded-lg shadow-2xl lg:col-span-4 md:block md:h-auto md:mx-0"
+    style="background-image: url('../static/imgs/hero.png');"
+    alt="hero"
+  ></div>
+
+  </section>

@@ -14,11 +14,10 @@ INSTALLED_APPS: list[str] = [
     "src.apps.theme",
     "src.apps.main",
     "src.apps.checkout",
-    "formtools"
+    "formtools",
 ]
 
 MIDDLEWARE: list[str] = [
-    
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -44,9 +43,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
             ],
-            "builtins": [
-               'django.templatetags.static'
-            ],
+            "builtins": ["django.templatetags.static"],
         },
     },
 ]

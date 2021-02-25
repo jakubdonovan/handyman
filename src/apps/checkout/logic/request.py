@@ -1,8 +1,9 @@
+from typing import Optional
 import requests
 from requests.models import Response
 
 
-def fetch_sections() -> list[str]:
+def fetch_sections() -> Optional[list[str]]:
 
     json = {"query": "{ sectionMany {_id, title}  }"}
     resp: Response = requests.post(

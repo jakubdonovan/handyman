@@ -1,11 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import (
-    ContactOptions,
-    PageOptions,
-    Stage,
-)
+from .models import ContactOptions, PageOptions, Stage
 
 admin.site.register(PageOptions)
 admin.site.register(Stage)

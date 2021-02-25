@@ -6,29 +6,29 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('checkout', '0001_initial'),
+        ("checkout", "0001_initial"),
     ]
 
     operations = [
         migrations.RenameModel(
-            old_name='ProfessionOption',
-            new_name='Profession',
+            old_name="ProfessionOption",
+            new_name="Profession",
         ),
         migrations.AlterModelOptions(
-            name='checkoutoptions',
-            options={'verbose_name': 'Checkout Option'},
+            name="checkoutoptions",
+            options={"verbose_name": "Checkout Option"},
         ),
         migrations.AlterModelOptions(
-            name='contactoptions',
-            options={'verbose_name': 'Contact Option'},
+            name="contactoptions",
+            options={"verbose_name": "Contact Option"},
         ),
         migrations.AlterModelOptions(
-            name='pageoptions',
-            options={'verbose_name': 'Page Option'},
+            name="pageoptions",
+            options={"verbose_name": "Page Option"},
         ),
         migrations.AlterField(
-            model_name='checkoutoptions',
-            name='image',
+            model_name="checkoutoptions",
+            name="image",
             field=models.CharField(max_length=30),
         ),
     ]

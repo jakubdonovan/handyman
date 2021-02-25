@@ -1,13 +1,16 @@
-from django.db import models
 from django.contrib.postgres.fields import ArrayField
+from django.db import models
 from django.db.models.fields import BooleanField
 from phonenumber_field.modelfields import PhoneNumberField
 
 MAX_LENGTH: int = 30
 # Create your models here.
 
+
 class PageOptions(models.Model):
-    professions = ArrayField(models.CharField(max_length=MAX_LENGTH), default=list)
+    professions = ArrayField(
+        models.CharField(max_length=MAX_LENGTH), default=list
+    )
     profile_image = models.CharField(max_length=MAX_LENGTH)
 
     # review_name = models.CharField(max_length=MAX_LENGTH)
@@ -44,7 +47,7 @@ class ContactOptions(models.Model):
 #         return f"{self.first_name} {self.last_name}"
 
 
-# TODO: 
+# TODO:
 # Position that increments, and can be overidden
 class Stage(models.Model):
     name = models.CharField(max_length=MAX_LENGTH)

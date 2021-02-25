@@ -1,28 +1,47 @@
-from typing import Text
+from typing import Any, Text
+
 from django import forms
 from django.forms import ModelForm
 from django.forms.widgets import TextInput
-from src.apps.checkout.models import PageOptions
 from phonenumber_field.formfields import PhoneNumberField
+from src.apps.checkout.models import PageOptions
 
 
 # Create the form class.
 class ContactForm(forms.Form):
-    first_name = forms.CharField(label="First Name", widget=TextInput(attrs={'placeholder': "John"}), )
-    last_name = forms.CharField(label="Last Name", widget=TextInput(attrs={'placeholder': "Doe"}))
+    first_name = forms.CharField(
+        label="First Name",
+        widget=TextInput(attrs={"placeholder": "John"}),
+    )
+    last_name = forms.CharField(
+        label="Last Name", widget=TextInput(attrs={"placeholder": "Doe"})
+    )
 
-    phone_number = PhoneNumberField(region="GB", widget=(TextInput(attrs={"class": "border-gray-200 w-full", "placeholder": "07391205592"})))
+    phone_number = PhoneNumberField(
+        region="GB",
+        widget=(
+            TextInput(
+                attrs={
+                    "class": "border-gray-200 w-full",
+                    "placeholder": "07391205592",
+                }
+            )
+        ),
+    )
     whats_app = forms.CheckboxInput()
 
     def __init__(self, *args, **kwargs):
         super().__init__()
-        for visible in self.visible_fields():
+
+        visible_fields:Any = self.visible_fields()
+        for visible in visible_fields:
 
             if not (field_class := visible.field.widget.attrs).get("class"):
-                field_class["class"] = "px-4 py-2 flex rounded-md border-gray-200"
+                field_class[
+                    "class"
+                ] = "px-4 py-2 flex rounded-md border-gray-200"
             else:
                 field_class["class"] += " px-4 py-2 flex rounded-md"
-
 
     # class Meta:
     #     model = ContactOptions
@@ -33,7 +52,6 @@ class ContactForm(forms.Form):
     #         "messenger",
     #         "whatsapp",
     #     ]
-
 
 
 # Create the form class.
