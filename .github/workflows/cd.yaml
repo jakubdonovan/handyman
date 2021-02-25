@@ -62,4 +62,4 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
           dokku-host: "95.179.202.170"
-          app-name: "handyman"
+          app-name: "hm"

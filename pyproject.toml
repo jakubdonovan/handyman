@@ -21,6 +21,7 @@ django-phonenumber-field = {extras = ["phonenumbers"], version = "^5.0.0"}
 whitenoise = "^5.2.0"
 requests = "^2.25.1"
 django-formtools = "^2.2"
+marshmallow-polyfield = "^5.10"
 
 [tool.poetry.dev-dependencies]
 mypy = "^0.800"
