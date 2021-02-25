@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "gatsby-plugin-facebook-pixel": "^1.0.5"
+  }
+}
