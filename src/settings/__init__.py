@@ -9,7 +9,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 
 """
-from os import environ
+import environ
 
 import django_stubs_ext
 from split_settings.tools import include
@@ -18,6 +18,7 @@ from split_settings.tools import include
 # see: https://github.com/typeddjango/django-stubs
 django_stubs_ext.monkeypatch()
 
+environ.Env.read_env()
 environ.setdefault("DJANGO_ENV", "development")
 ENV = environ["DJANGO_ENV"]
 
