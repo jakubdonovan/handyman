@@ -4,7 +4,7 @@
   "scripts": {
     "start": "npm run dev",
     "build": "npm run build:clean && npm run build:postcss",
-    "build:clean": "rimraf ../static/css",
+    "build:clean": "rimraf ../css",
     "build:postcss": "cross-env NODE_ENV=production && yarn dev",
     "dev": "npm run dev:postcss",
     "dev:postcss": "postcss src/styles.css -o ../css/compiled.css"
