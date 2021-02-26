@@ -57,7 +57,7 @@ WSGI_APPLICATION = "src.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": env("DATABASE_URL"),
+        "dj_database_url": env("DATABASE_URL"),
         # "USER": env("PGUSER"),
         # "PASSWORD": env("PGPASSWORD"),
         # "HOST": env("PGHOST"),
