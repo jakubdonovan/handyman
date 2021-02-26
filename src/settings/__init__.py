@@ -10,18 +10,22 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 """
 from src.utils import config
-import os
 import environ
 
 import django_stubs_ext
 from split_settings.tools import include
 
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False)
+)
+environ.Env.read_env()
+
 # Monkeypatching Django, so stubs will work for all generics,
 # see: https://github.com/typeddjango/django-stubs
 django_stubs_ext.monkeypatch()
 
-os.environ.setdefault("DJANGO_ENV", "development")
-ENV = environ("DJANGO_ENV")
+ENV = env("DJANGO_ENV", "development")
 
 _base_settings = (
     "components/common.py",

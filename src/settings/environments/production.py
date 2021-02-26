@@ -1,7 +1,7 @@
-import environ
+from src.settings import env
 
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    environ("DOMAIN_NAME"),
+    env("DOMAIN_NAME"),
 ]
