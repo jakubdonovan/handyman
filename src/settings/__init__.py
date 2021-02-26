@@ -25,7 +25,7 @@ environ.Env.read_env()
 # see: https://github.com/typeddjango/django-stubs
 django_stubs_ext.monkeypatch()
 
-ENV = env("DJANGO_ENV", "development")
+ENV = env("DJANGO_ENV", default="development")
 
 _base_settings = (
     "components/common.py",
