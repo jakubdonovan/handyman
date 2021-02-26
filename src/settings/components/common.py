@@ -1,8 +1,8 @@
 from src.settings.components import BASE_DIR
-from src.utils import config
+import environ
 
 # Application definition
-SECRET_KEY = config("DJANGO_SECRET_KEY")
+SECRET_KEY = environ("DJANGO_SECRET_KEY")
 
 INSTALLED_APPS: list[str] = [
     "django.contrib.admin",
@@ -57,11 +57,11 @@ WSGI_APPLICATION = "src.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": config("PGDATABASE"),
-        "USER": config("PGUSER"),
-        "PASSWORD": config("PGPASSWORD"),
-        "HOST": config("PGHOST"),
-        "PORT": config("PGPORT"),
+        "NAME": environ("PGDATABASE"),
+        "USER": environ("PGUSER"),
+        "PASSWORD": environ("PGPASSWORD"),
+        "HOST": environ("PGHOST"),
+        "PORT": environ("PGPORT"),
     }
 }
 

@@ -1,7 +1,7 @@
-from src.utils import config
+import environ
 
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    config("DOMAIN_NAME"),
+    environ("DOMAIN_NAME"),
 ]

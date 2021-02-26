@@ -10,7 +10,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 """
 from src.utils import config
-from os import environ
+import os
+import environ
 
 import django_stubs_ext
 from split_settings.tools import include
@@ -19,8 +20,8 @@ from split_settings.tools import include
 # see: https://github.com/typeddjango/django-stubs
 django_stubs_ext.monkeypatch()
 
-environ.setdefault("DJANGO_ENV", "development")
-ENV = config("DJANGO_ENV")
+os.environ.setdefault("DJANGO_ENV", "development")
+ENV = environ("DJANGO_ENV")
 
 _base_settings = (
     "components/common.py",
