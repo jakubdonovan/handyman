@@ -3,16 +3,6 @@ on: [push]
 env:
   production: True
   PROJECT_PATH: src/apps/theme/static/js
-  DJANGO_SECRET_KEY: 7kt@lq*%x6(ep6e%x&%n5qm_92ul&_vs9sb^x5tza+k@#bm=g5
-
-  PGDATABASE: x
-  PGUSER: root
-  PGPASSWORD: nopass
-  PGHOST: localhost
-  PGPORT: 5432
-
-  DJANGO_ENV: production
-  DOMAIN_NAME: handyman.services
 
 jobs:
   build:
